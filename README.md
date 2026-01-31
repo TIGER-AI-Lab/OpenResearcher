@@ -29,7 +29,7 @@ mkdir -p Tevatron/browsecomp-plus-corpus/data
 mkdir -p Tevatron/browsecomp-plus-indexes
 
 # Download corpus (parquet files)
-huggingface-cli download OpenResearcher/browsecomp-plus-corpus \
+hf download Tevatron/browsecomp-plus-corpus \
     --repo-type dataset \
     --local-dir Tevatron/browsecomp-plus-corpus
 ```
@@ -37,13 +37,13 @@ huggingface-cli download OpenResearcher/browsecomp-plus-corpus \
 **2. Download Search Indexes:**
 ```bash
 # BM25 Index (lightweight, recommended)
-huggingface-cli download OpenResearcher/browsecomp-plus-indexes \
+hf download Tevatron/browsecomp-plus-indexes \
     --repo-type dataset \
     --include "bm25/*" \
     --local-dir Tevatron/browsecomp-plus-indexes
 
 # Dense Index (optional, requires GPU)
-huggingface-cli download OpenResearcher/browsecomp-plus-indexes \
+hf download Tevatron/browsecomp-plus-indexes \
     --repo-type dataset \
     --include "qwen3-embedding-8b/*" \
     --local-dir Tevatron/browsecomp-plus-indexes
