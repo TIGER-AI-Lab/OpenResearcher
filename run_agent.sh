@@ -7,7 +7,9 @@ BASE_PORT=${2:-8002}
 NUM_SERVERS=${3:-3}
 DATASET_NAME=${4:-"browsecomp"}
 BROWSER_BACKEND=${5:-"local"}
-MODEL=${6:-"OpenResearcher/Nemotron-3-Nano-30B-A3B"}
+# MODEL=${6:-"OpenResearcher/Nemotron-3-Nano-30B-A3B"}
+MODEL=${6:-"/home/ubuntu/jianwen-us-midwest-1/panlu/model/nano_v3_search_correct_only_347_steps"}
+
 
 SEARCH_URL="http://localhost:8000"
 

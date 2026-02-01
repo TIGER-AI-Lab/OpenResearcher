@@ -48,21 +48,32 @@ cd ..
 
 ### Local Search Engine (For BrowseComp-Plus)
 
-To run **BrowseComp-Plus** benchmark with local search, you need to download the corpus and indexes:
+To run **BrowseComp-Plus** benchmark with local search, you need to download the queries, corpus, and indexes:
 
-**1. Download BrowseComp-Plus Corpus:**
+**1. Download BrowseComp-Plus Queries (Required):**
 ```bash
 # Create data directory
+mkdir -p Tevatron/browsecomp-plus/data
+
+# Download queries (contains questions, answers, and relevance judgements)
+hf download Tevatron/browsecomp-plus \
+    --repo-type dataset \
+    --local-dir Tevatron/browsecomp-plus
+```
+
+**2. Download BrowseComp-Plus Corpus:**
+```bash
+# Create corpus directory
 mkdir -p Tevatron/browsecomp-plus-corpus/data
 mkdir -p Tevatron/browsecomp-plus-indexes
 
-# Download corpus (parquet files)
+# Download corpus (parquet files with document texts)
 hf download Tevatron/browsecomp-plus-corpus \
     --repo-type dataset \
     --local-dir Tevatron/browsecomp-plus-corpus
 ```
 
-**2. Download Search Indexes:**
+**3. Download Search Indexes:**
 ```bash
 # BM25 Index (lightweight, recommended)
 hf download Tevatron/browsecomp-plus-indexes \
@@ -77,7 +88,7 @@ hf download Tevatron/browsecomp-plus-indexes \
     --local-dir Tevatron/browsecomp-plus-indexes
 ```
 
-**3. Download Lucene JARs (for BM25 highlighting):**
+**4. Download Lucene JARs (for BM25 highlighting):**
 ```bash
 mkdir -p tevatron
 cd tevatron
@@ -189,7 +200,7 @@ For other parameters, please refer to [assets/docs/parameter.md](assets/docs/par
 | Benchmark | Dataset Key | Size | Language | Search Backend | Description |
 |-----------|-------------|------|----------|----------------|-------------|
 | **BrowseComp** | `browsecomp` | 1266 | EN | serper | OpenAI public browse benchmark |
-| **BrowseComp-Plus** | `browsecomp_plus` | 830 | EN | local | Deep-research benchmark isolating retriever and LLM agent effects |
+| **BrowseComp-Plus** | `browsecomp-plus` | 830 | EN | local | Deep-research benchmark isolating retriever and LLM agent effects |
 | **GAIA-text** | `gaia` | 103 | EN | serper | Text-only subset of GAIA benchmark (dev split) |
 | **XBench** | `xbench` | 100 | ZH | serper | DeepSearch benchmark with encrypted test cases |
 | **SealQA-ref** | `seal_ref` | 111 | EN | serper | With reference URLs |
@@ -199,8 +210,8 @@ For other parameters, please refer to [assets/docs/parameter.md](assets/docs/par
 | Scenario | Command |
 |----------|---------|
 | **BrowseComp** | `bash run_agent.sh results/browsecomp 8001 2 browsecomp serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
-| **BrowseComp+ (BM25)** | `bash scripts/start_search_service.sh bm25 8000` then `bash run_agent.sh results/browsecomp_plus/OpenResearcher_bm25 8001 2 browsecomp_plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
-| **BrowseComp+ (Dense)** | `bash scripts/start_search_service.sh dense 8000` then `bash run_agent.sh results/browsecomp_plus/OpenResearcher_dense 8001 2 browsecomp_plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| **BrowseComp+ (BM25)** | `bash scripts/start_search_service.sh bm25 8000` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_bm25 8001 2 browsecomp-plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| **BrowseComp+ (Dense)** | `bash scripts/start_search_service.sh dense 8000` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_dense 8001 2 browsecomp-plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
 | **GAIA** | `bash run_agent.sh results/gaia 8001 2 gaia serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
 | **XBench** | `bash run_agent.sh results/xbench 8001 2 xbench serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
 
