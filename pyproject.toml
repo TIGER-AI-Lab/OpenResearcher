@@ -19,7 +19,7 @@ dependencies = [
     "pyserini>=1.5.0",
     "qwen-omni-utils>=0.0.8",
     "transformers>=4.57.6",
-    "vllm>=0.14.1",
+    "vllm==0.13.0",
     "json5>=0.9.10",
 ]
 
