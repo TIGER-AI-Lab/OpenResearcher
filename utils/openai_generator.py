@@ -54,73 +54,40 @@ class OpenAIAsyncGenerator:
         if self.tokenizer is not None:
             return
 
-        try:
-            # Get model list to determine the actual model name
-            response = await self.client.get(f"{self.base_url}/models")
-            models_data = response.json()
+        # Try to fetch model name if not set
+        if not self.model_name:
+            try:
+                # Get model list to determine the actual model name
+                response = await self.client.get(f"{self.base_url}/models")
+                models_data = response.json()
 
-            if not self.model_name and models_data.get("data"):
-                # Use first available model
-                self.model_name = models_data["data"][0]["id"]
-                print(f"Auto-detected model: {self.model_name}")
+                if models_data.get("data"):
+                    # Use first available model
+                    self.model_name = models_data["data"][0]["id"]
+                    print(f"Auto-detected model: {self.model_name}")
+            except Exception as e:
+                print(f"Warning: Could not fetch model list from server: {e}")
 
-            # Use pre-imported AutoTokenizer if available
-            if not _TRANSFORMERS_AVAILABLE or AutoTokenizer is None:
-                raise ImportError("transformers library not available")
+        # Use pre-imported AutoTokenizer if available
+        if not _TRANSFORMERS_AVAILABLE or AutoTokenizer is None:
+            raise ImportError("transformers library not available")
 
-            # Try to load tokenizer from model name
-            tokenizer_name = self.model_name
-            # Handle common model name prefixes
-            if tokenizer_name.startswith("openai/"):
-                tokenizer_name = tokenizer_name.replace("openai/", "OpenGPT-X/")
+        # Try to load tokenizer from model name
+        tokenizer_name = self.model_name
+        if not tokenizer_name:
+             raise ValueError("No model name provided and could not fetch from server")
 
-            print(f"Loading tokenizer for: {tokenizer_name}")
-            self.tokenizer = AutoTokenizer.from_pretrained(
-                tokenizer_name,
-                trust_remote_code=True
-            )
-            print(f"Tokenizer loaded successfully")
+        # Handle common model name prefixes
+        if tokenizer_name.startswith("openai/"):
+            tokenizer_name = tokenizer_name.replace("openai/", "OpenGPT-X/")
 
-        except Exception as e:
-            print(f"Warning: Could not initialize tokenizer from server: {e}")
-            print(f"Using DummyTokenizer as fallback")
-            # Create a dummy tokenizer that uses character-level encoding
-            class DummyTokenizer:
-                def __init__(self):
-                    # Store text chunks by their "token IDs" (just indices)
-                    self._text_cache = {}
-                    self._next_id = 0
-
-                def apply_chat_template(self, messages, tokenize=False, add_generation_prompt=True):
-                    # Simple fallback: just concatenate messages
-                    parts = []
-                    for msg in messages:
-                        role = msg.get("role", "user")
-                        content = msg.get("content", "")
-                        if role == "system":
-                            parts.append(f"System: {content}\n")
-                        elif role == "user":
-                            parts.append(f"User: {content}\n")
-                        elif role == "assistant":
-                            parts.append(f"Assistant: {content}\n")
-                    if add_generation_prompt:
-                        parts.append("Assistant: ")
-                    return "".join(parts)
-
-                def encode(self, text, add_special_tokens=False):
-                    # Use character-level encoding: each char becomes a token ID (its Unicode value)
-                    return [ord(c) for c in text]
-
-                def decode(self, token_ids, skip_special_tokens=False):
-                    # Decode character-level tokens back to text
-                    try:
-                        return "".join(chr(tid) for tid in token_ids)
-                    except (ValueError, OverflowError):
-                        # If token IDs are not valid Unicode, return empty string
-                        return ""
-
-            self.tokenizer = DummyTokenizer()
-            print(f"DummyTokenizer initialized successfully")
+        print(f"Loading tokenizer for: {tokenizer_name}")
+        # Direct load, no try/except fallback to Dummy
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            tokenizer_name,
+            trust_remote_code=True
+        )
+        print(f"Tokenizer loaded successfully")
 
     async def generate(
         self,
