@@ -3,8 +3,8 @@
 # Usage: ./run_agent.sh [output_dir] [base_port] [num_servers] [dataset_name] [browser_backend] [model_path]
 
 OUTPUT_DIR=${1:-"results/browsecomp-plus/OpenResearcher_dense"}
-BASE_PORT=${2:-8002}
-NUM_SERVERS=${3:-3}
+BASE_PORT=${2:-8001}
+NUM_SERVERS=${3:-2}
 DATASET_NAME=${4:-"browsecomp-plus"}
 BROWSER_BACKEND=${5:-"local"}
 MODEL=${6:-"OpenResearcher/Nemotron-3-Nano-30B-A3B"}
