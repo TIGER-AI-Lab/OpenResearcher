@@ -61,7 +61,7 @@ if [ "$DATASET_NAME" = "browsecomp-plus" ]; then
         --browser_backend "$BROWSER_BACKEND" \
         --reasoning_effort high \
         --vllm_server_url "$SERVER_URLS" \
-        --max_concurrency_per_worker 64
+        --max_concurrency_per_worker 32
 else
     # HuggingFace datasets or OpenAI BrowseComp (no local data_path needed)
     echo "Using dataset: $DATASET_NAME"
@@ -76,5 +76,5 @@ else
         --browser_backend "$BROWSER_BACKEND" \
         --reasoning_effort high \
         --vllm_server_url "$SERVER_URLS" \
-        --max_concurrency_per_worker 64
+        --max_concurrency_per_worker 32
 fi
