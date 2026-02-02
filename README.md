@@ -15,7 +15,7 @@
 <p align="center">
 🤗 <a href="https://huggingface.co/OpenResearcher" target="_blank">HuggingFace</a> ｜
 💡 <a href="https://openresearcher.github.io/" target="_blank">Blog</a> ｜
-<img src="./assets/imgs/slack.png" width="14px" style="display:inline;"> <a href="https://join.slack.com/t/openresearcher/shared_invite/zt-3p0r32cky-PqtZkVjjWIAI14~XwcRMfQ" target="_blank">Slack</a> | <img src="./assets/imgs/wechat.svg" width="14px" style="display:inline;"> <a href="#" target="_blank">WeChat</a> 
+<img src="./assets/imgs/slack.png" width="14px" style="display:inline;"> <a href="https://join.slack.com/t/openresearcher/shared_invite/zt-3p0r32cky-PqtZkVjjWIAI14~XwcRMfQ" target="_blank">Slack</a> | <img src="./assets/imgs/wechat.svg" width="14px" style="display:inline;"> <a href="./assets/imgs/wechat_group.png" target="_blank">WeChat</a> |
 
 </p>
 
