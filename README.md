@@ -19,7 +19,7 @@
 
 </p>
 
-## Introduction
+## 💥 Introduction
 
 **OpenResearcher** is a fully open agentic large language model (30B-A3B) designed for **long-horizon deep research** scenarios. It achieves an impressive **54.8%** accuracy on [BrowserComp-Plus](https://huggingface.co/spaces/Tevatron/BrowseComp-Plus), surpassing performance of `GPT-4.1`, `Claude-Opus-4`, `Gemini-2.5-Pro`, `DeepSeek-R1`, `Tongyi-DeepResearch`. We **fully open-source** the complete training and evaluation recipe—including data, model, training methodology, and evaluation pipeline for everyone to progress deep research and develop state-of-the-art models efficiently.
 <div align="center">
@@ -28,7 +28,7 @@
 
 <br>
 
-## 🏆 Experiments
+## 🏆 Deep Research Benchmark Results
 
 ## 📋 Table of Contents
 
