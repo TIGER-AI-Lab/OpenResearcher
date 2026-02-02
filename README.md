@@ -25,6 +25,12 @@
 It achieves **leading performance accross DeepResearch benchmarks**, including BrowseComp-Plus, BrowseComp, GAIA, and xbench-DeepSearch.
 We **fully open-source** the complete training and evaluation recipe—including data, model, training methodology, and evaluation pipeline—enabling broad reproducibility and empowering the community to train state-of-the-art deep-research models.
 
+<div align="center">
+  <img src="assets/imgs/teaser.png" alt="OpenResearcher Teaser" width="100%" style="max-width: 850px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+</div>
+
+<br>
+
 ## 🏆 Experiments
 
 ## 📋 Table of Contents
