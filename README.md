@@ -127,7 +127,7 @@ What this does:
 - Launches 2 vLLM servers (ports 8001, 8002) with TP=2 across 4 GPUs
 - Runs deepresearch agent with load balancing across both servers
 
-### Example 2: Using Serper API (No Local Search Needed)
+### Example 2: GAIA with Serper API (No Local Search Needed)
 
 Run with Serper Google Search API (**note: applicable to all benchmarks except BrowserComp-Plus**):
 
