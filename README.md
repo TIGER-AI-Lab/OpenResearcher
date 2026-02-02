@@ -23,7 +23,7 @@
 ## Introduction
 
 Evaluation framework for deep research agents with local/remote search engines and multiple LLM backends. TODO
-TODO: teaser figure
+<img width="20639" height="14239" alt="teaser-v3 (1)" src="https://github.com/user-attachments/assets/5ae76a21-8ac9-46a1-94a8-6884d7a4a67b" />
 
 ## 🏆 Experiments
 
