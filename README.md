@@ -4,8 +4,8 @@
 
 <div align="center" style="line-height: 1; margin-top: 16px;">
 
-[![Dataset](https://img.shields.io/badge/Datasets-FFB7B2?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/OpenResearcher)
-[![Model](https://img.shields.io/badge/Models-FFD966?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/OpenResearcher/Nemotron-3-Nano-30B-A3B)
+[![Dataset](https://img.shields.io/badge/Dataset-FFB7B2?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/OpenResearcher)
+[![Model](https://img.shields.io/badge/Model-FFD966?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/OpenResearcher/Nemotron-3-Nano-30B-A3B)
 [![Blog](https://img.shields.io/badge/Blog-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://openresearcher.github.io/)
 [![WandB Logs](https://img.shields.io/badge/WandB%20Logs-48B5A3?style=for-the-badge&logo=weightsandbiases&logoColor=white)](https://wandb.ai/dongfu/nano-v3-sft-search)
 [![Eval Logs](https://img.shields.io/badge/Eval%20Logs-755BB4?style=for-the-badge&logo=weightsandbiases&logoColor=white)](https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Eval-Logs/tree/main)
