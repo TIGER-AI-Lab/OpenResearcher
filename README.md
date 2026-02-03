@@ -83,7 +83,7 @@ uv pip install -e .
 ### Deep Research Benchmarks Preparation
 
 Run the setup script to automatically download the **[BrowseComp-Plus](https://arxiv.org/abs/2508.06600)** benchmark.  
-Other benchmarks, including **[BrowseComp](https://arxiv.org/abs/2504.12516)**, **[GAIA](https://arxiv.org/abs/2311.12983)** and **[xbench-DeepResearch](https://github.com/THUDM/xbench)****, will be set up automatically when they are first used.
+Other benchmarks, including **[BrowseComp](https://arxiv.org/abs/2504.12516)**, **[GAIA](https://arxiv.org/abs/2311.12983)** and **[xbench-DeepResearch](https://github.com/THUDM/xbench)**, will be set up automatically when they are first used.
 
 ```bash
 bash setup.sh
@@ -171,10 +171,10 @@ We benchmark our OpenResearcher-30B-A3B using below deep research benchmarks:
 
 | Benchmark | Dataset Key | Size | Language | Search Backend | Description |
 |-----------|-------------|------|----------|----------------|-------------|
-| **[BrowseComp-Plus](https://arxiv.org/abs/2508.06600)** | `browsecomp_plus` | 830 | EN | local | Deep-research benchmark from BrowseComp isolating retriever and LLM agent effects |
-| **[BrowseComp](https://arxiv.org/abs/2504.12516)** | `browsecomp` | 103 | EN | serper | A Simple Yet Challenging Benchmark for Browsing Agents |
-| **[GAIA-text](https://arxiv.org/abs/2311.12983)** | `gaia` | 103 | EN | serper | Text-only subset of GAIA benchmark (dev split) |
-| **[xbench-DeepResearch](https://github.com/THUDM/xbench)** | `xbench` | 100 | ZH | serper | DeepSearch benchmark with encrypted test cases |
+| [BrowseComp-Plus](https://arxiv.org/abs/2508.06600) | `browsecomp_plus` | 830 | EN | local | Deep-research benchmark from BrowseComp isolating retriever and LLM agent effects |
+| [BrowseComp](https://arxiv.org/abs/2504.12516) | `browsecomp` | 103 | EN | serper | A Simple Yet Challenging Benchmark for Browsing Agents |
+| [GAIA-text](https://arxiv.org/abs/2311.12983) | `gaia` | 103 | EN | serper | Text-only subset of GAIA benchmark (dev split) |
+| [xbench-DeepResearch](https://github.com/THUDM/xbench) | `xbench` | 100 | ZH | serper | DeepSearch benchmark with encrypted test cases |
 
 For more info about these deep research benchmarks, see [benchmarks.md](assets/docs/benchmarks.md) 
 
@@ -183,11 +183,11 @@ For more info about these deep research benchmarks, see [benchmarks.md](assets/d
 
 | Scenario | Command |
 |----------|---------|
-| **BrowseComp-Plus (BM25)** | `bash scripts/start_search_service.sh bm25 8000` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_bm25 8001 2 browsecomp-plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
-| **BrowseComp-Plus (Qwen3-8B Dense Embeddings)** | `bash scripts/start_search_service.sh dense 8000` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_dense 8001 2 browsecomp-plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
-| **BrowseComp** | `bash run_agent.sh results/browsecomp 8001 2 browsecomp serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
-| **GAIA** | `bash run_agent.sh results/gaia 8001 2 gaia serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
-| **xbench-DeepResearch** | `bash run_agent.sh results/xbench 8001 2 xbench serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| BrowseComp-Plus (BM25) | `bash scripts/start_search_service.sh bm25 8000` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_bm25 8001 2 browsecomp-plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| BrowseComp-Plus (Qwen3-8B Dense Embeddings) | `bash scripts/start_search_service.sh dense 8000` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_dense 8001 2 browsecomp-plus local OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| BrowseComp** | `bash run_agent.sh results/browsecomp 8001 2 browsecomp serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| GAIA | `bash run_agent.sh results/gaia 8001 2 gaia serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
+| xbench-DeepResearch | `bash run_agent.sh results/xbench 8001 2 xbench serper OpenResearcher/Nemotron-3-Nano-30B-A3B` |
 
 **Note:** Don't forget to evaluate your results using:  
 ```bash
