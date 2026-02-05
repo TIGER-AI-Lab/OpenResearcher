@@ -7,7 +7,7 @@
 [![Blog](https://img.shields.io/badge/Blog-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://boiled-honeycup-4c7.notion.site/OpenResearcher-A-Fully-Open-Pipeline-for-Long-Horizon-Deep-Research-Trajectory-Synthesis-2f7e290627b5800cb3a0cd7e8d6ec0ea?source=copy_link)
 [![Demo](https://img.shields.io/badge/Demo-F97316.svg?style=for-the-badge&logo=gradio&logoColor=white)](https://huggingface.co/spaces/OpenResearcher/OpenResearcher)
 [![Dataset](https://img.shields.io/badge/Dataset-FFB7B2?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Dataset)
-[![Model](https://img.shields.io/badge/Model-FFD966?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/OpenResearcher/Nemotron-3-Nano-30B-A3B)
+[![Model](https://img.shields.io/badge/Model-FFD21E?style=for-the-badge&logo=huggingface&logoColor=ffffff)](https://huggingface.co/OpenResearcher/Nemotron-3-Nano-30B-A3B)
 [![WandB Logs](https://img.shields.io/badge/WandB%20Logs-48B5A3?style=for-the-badge&logo=weightsandbiases&logoColor=white)](https://wandb.ai/dongfu/nano-v3-sft-search)
 [![Eval Logs](https://img.shields.io/badge/Eval%20Logs-755BB4?style=for-the-badge&logo=google-sheets&logoColor=white)](https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Eval-Logs/tree/main)
 
