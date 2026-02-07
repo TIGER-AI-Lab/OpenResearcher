@@ -177,7 +177,7 @@ For more info about these deep research benchmarks, see [benchmarks.md](assets/d
 
 ### Example 1: BrowseComp-Plus with Local Search Engine
 
-Complete evaluation using local Dense search (**note: only applicable for BrowseComp-Plus**):
+Complete evaluation using local dense search (**note: only applicable for BrowseComp-Plus**):
 
 ```bash
 # Terminal 1: Start local Dense search service on port 8000
@@ -231,7 +231,7 @@ python eval.py --input_dir results/gaia/OpenResearcher_serper
 
 | Scenario | Command |
 |----------|---------|
-| BrowseComp-Plus (BM25) | `bash scripts/start_search_service.sh bm25 8000` then `bash scripts/start_nemotron_servers.sh 2 8001 0,1,2,3` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_bm25 8001 2 browsecomp-plus local OpenResearcher/OpenResearcher-30B-A3B` |
+| BrowseComp-Plus (BM25) | `bash scripts/start_search_service.sh bm25 8000` then `bash scripts/start_nemotron_servers.sh 2 8001 0,1,2,3` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_bm25 8001 2 browsecomp_plus local OpenResearcher/OpenResearcher-30B-A3B` |
 | BrowseComp-Plus (Qwen3-8B Dense Embeddings) | `bash scripts/start_search_service.sh dense 8000` then `bash scripts/start_nemotron_servers.sh 2 8001 0,1,2,3` then `bash run_agent.sh results/browsecomp-plus/OpenResearcher_dense 8001 2 browsecomp-plus local OpenResearcher/OpenResearcher-30B-A3B` |
 | BrowseComp | `bash scripts/start_nemotron_servers.sh 2 8001 0,1,2,3` then `bash run_agent.sh results/browsecomp 8001 2 browsecomp serper OpenResearcher/OpenResearcher-30B-A3B` |
 | GAIA | `bash scripts/start_nemotron_servers.sh 2 8001 0,1,2,3` then `bash run_agent.sh results/gaia 8001 2 gaia serper OpenResearcher/OpenResearcher-30B-A3B` |
