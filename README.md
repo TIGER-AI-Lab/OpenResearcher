@@ -71,6 +71,9 @@ Other hardware setups can also work, but remember to modify the corresponding pa
 ```bash
 sudo apt update 
 sudo apt install -y openjdk-21-jdk
+
+# install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv --python 3.12
 source .venv/bin/activate
 
