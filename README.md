@@ -23,7 +23,7 @@
 </p>
 
 ## 📣 News 
-+ **[2026.2.18]** 🧪 The OpenResearcher training [code](https://github.com/TIGER-AI-Lab/OpenResearcher/edit/main/README.md#-optional-train-your-own-openresearcher) is now available. Start training your own OpenResearcher!
++ **[2026.2.18]** 🧪 The OpenResearcher training [code](https://github.com/TIGER-AI-Lab/OpenResearcher?tab=readme-ov-file#-optional-train-your-own-openresearcher) is now available. Start training your own OpenResearcher!
 + **[2026.2.14]** 📸 Excited to have our OpenResearcher demo [video](https://x.com/zhuofengli96475/status/2021682952074097086). Dive in and unlock the power of Deep Research today!
 + **[2026.2.12]**  🔥 Excited to see **OpenResearcher** powering deep research trajectory generation in [**NVIDIA’s NeMo Data Designer**](https://nvidia-nemo.github.io/DataDesigner/latest/devnotes/deep-research-trajectories-with-nemo-data-designer-and-mcp-tool-use/)!
 + **[2026.2.10]** 🚀 Our X [post](https://x.com/DongfuJiang/status/2020946549422031040) received **1.2K+ likes**! Feel free to check out the post and join the discussion! 💬
