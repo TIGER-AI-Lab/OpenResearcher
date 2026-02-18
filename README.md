@@ -249,6 +249,15 @@ For script parameter explanation, refer to [parameter.md](assets/docs/parameter.
 ```bash
 python eval.py --input_dir [INPUT_DIR]
 ```
+
+## Training
+
+We use the [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) to train our OpenResearcher-30B-A3B model. To get started, clone the `openresearcher` branch of the Megatron-LM repository:
+```
+git clone -b openresearcher https://github.com/jdf/Megatron-LM.git
+```
+Then follow the training instructions [here](https://github.com/jdf-prog/Megatron-LM/tree/openresearcher/examples/openresearcher) to train your own OpenResearcher model!
+
 ## 🤝 Core Contributors
 
 <table>
