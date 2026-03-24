@@ -14,11 +14,9 @@
   <a href="https://x.com/zhuofengli96475/status/2021682952074097086"><img src="https://img.shields.io/badge/Video-CA4245?style=for-the-badge&logo=youtube&logoColor=white" alt="Video"></a>
   <a href="https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Eval-Logs/tree/main"><img src="https://img.shields.io/badge/Eval%20Logs-755BB4?style=for-the-badge&logo=google-sheets&logoColor=white" alt="Eval Logs"></a>
 </div>
-
-<p align="center">
-  <b><span style="color:#d73a49;">Adopted by NVIDIA's Nemotron family of models</span></b>
-</p>
-
+<div align="center">
+  <img src="assets/imgs/nvidia_banner.svg" alt="Adopted by NVIDIA's Nemotron family of models!">
+</div>
 </div>
 <br>
 <p align="center">
