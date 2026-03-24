@@ -24,10 +24,10 @@
 ## 📣 News 
 + **[2026.3.24]** 🔥 **The OpenResearcher [paper](https://huggingface.co/papers/2603.20278) is now available**, highlighting practical insights into deep research pipeline design. Don't miss it.
 + **[2026.2.25]** Honored to be among the **top 3 trending datasets** on 🤗 [Hugging Face](https://huggingface.co/datasets) — now **11K+** downloads! 🚀
-+ **[2026.2.18]** 🧪 The OpenResearcher training [code](https://github.com/TIGER-AI-Lab/OpenResearcher?tab=readme-ov-file#-optional-train-your-own-openresearcher) is now available. Start training your own OpenResearcher!
-+ **[2026.2.14]** 📸 Excited to have our OpenResearcher demo [video](https://x.com/zhuofengli96475/status/2021682952074097086). Dive in and unlock the power of Deep Research today!
-+ **[2026.2.12]**  🔥 Excited to see **OpenResearcher** powering deep research trajectory generation in [**NVIDIA’s NeMo Data Designer**](https://nvidia-nemo.github.io/DataDesigner/latest/devnotes/deep-research-trajectories-with-nemo-data-designer-and-mcp-tool-use/)!
-+ **[2026.2.10]** 🚀 Our X [post](https://x.com/DongfuJiang/status/2020946549422031040) received **1.2K+ likes**! Feel free to check out the post and join the discussion! 💬
++ **[2026.2.18]** The OpenResearcher training [code](https://github.com/TIGER-AI-Lab/OpenResearcher?tab=readme-ov-file#-optional-train-your-own-openresearcher) is now available. Start training your own OpenResearcher!
++ **[2026.2.14]** Excited to have our OpenResearcher demo [video](https://x.com/zhuofengli96475/status/2021682952074097086). Dive in and unlock the power of Deep Research today!
++ **[2026.2.12]**  Excited to see **OpenResearcher** powering deep research trajectory generation in [**NVIDIA’s NeMo Data Designer**](https://nvidia-nemo.github.io/DataDesigner/latest/devnotes/deep-research-trajectories-with-nemo-data-designer-and-mcp-tool-use/)!
++ **[2026.2.10]** Our X [post](https://x.com/DongfuJiang/status/2020946549422031040) received **1.2K+ likes**! Feel free to check out the post and join the discussion! 💬
 
 ## 💥 Introduction
 
