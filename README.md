@@ -5,7 +5,7 @@
 <div align="center" style="line-height: 1; margin-top: 16px;">
 
 <div align="center">
-    <a href="https://huggingface.co/papers/2603.20278"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white" alt="Blog"></a>
+    <a href="https://arxiv.org/abs/2603.20278"><img src="https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white" alt="Blog"></a>
     <a href="https://x.com/zhuofengli96475/status/2036475211063648414"><img src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=X&logoColor=white" alt="Blog"></a>
     <a href="https://github.com/TIGER-AI-Lab/OpenResearcher"><img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white" alt="Blog"></a>
   <a href="https://huggingface.co/datasets/OpenResearcher/OpenResearcher-Dataset"><img src="https://img.shields.io/badge/Dataset-FFB7B2?style=for-the-badge&logo=huggingface&logoColor=ffffff" alt="Dataset"></a>
@@ -25,6 +25,7 @@
 </p>
 
 ## 📣 News 
++ **[2026.3.25]** 🚀 OpenResearcher hit #2 on [Hugging Face Daily Papers](https://huggingface.co/papers/2603.20278)! 
 + **[2026.3.24]** 🔥 **OpenResearcher [paper](https://huggingface.co/papers/2603.20278) is now available**, highlighting practical insights into deep research pipeline design. Already adopted by **NVIDIA's Nemotron family of models**!
 + **[2026.2.25]** Honored to be among the **top 3 trending datasets** on 🤗 [Hugging Face](https://huggingface.co/datasets) — now **11K+** downloads! 
 + **[2026.2.18]** The OpenResearcher training [code](https://github.com/TIGER-AI-Lab/OpenResearcher?tab=readme-ov-file#-optional-train-your-own-openresearcher) is now available. Start training your own OpenResearcher!
