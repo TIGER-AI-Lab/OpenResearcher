@@ -344,3 +344,141 @@ class SerperServiceBrowserBackend:
         )
 
 
+class SpecStreamServiceBrowserBackend:
+    """Browser backend using SpecStream Search and Extract APIs."""
+    source = "web"
+
+    def __init__(self, api_key: str | None = None):
+        self.api_key = api_key if api_key is not None else os.getenv("SPECSTREAM_API_KEY")
+        self.search_url = "https://api.specstream.ai/v1/web-search"
+        self.extract_url = "https://api.specstream.ai/v1/extract"
+
+    def _headers(self) -> dict:
+        if not self.api_key:
+            raise BackendError("SPECSTREAM_API_KEY environment variable is not set")
+        return {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
+
+    async def _search_single(
+        self,
+        query: str,
+        topn: int,
+        session: ClientSession,
+    ) -> tuple[str, list]:
+        """Execute a single search query and return query with results."""
+        params = {
+            "q": query,
+            "num": max(1, min(int(topn), 100)),
+            "speed": "fast",
+        }
+
+        async with session.get(self.search_url, params=params, headers=self._headers()) as resp:
+            if resp.status != 200:
+                raise BackendError(
+                    f"Search error {resp.status}: {await resp.text()}"
+                )
+            data = await resp.json()
+
+        results = (data.get("data") or {}).get("sources") or []
+        if not results:
+            logger.warning(f"No results returned for query: '{query}'")
+            return query, []
+
+        title_url_summary = [
+            (
+                html.escape(result.get("title") or "", quote=True),
+                html.escape(result.get("url") or "", quote=True),
+                html.escape(result.get("snippet") or "", quote=True),
+            )
+            for result in results
+        ]
+        return query, title_url_summary
+
+    async def search(
+        self,
+        query: Union[str, List[str]],
+        topn: int = 5,
+        session=None,
+    ):
+        """Search using SpecStream API. Supports single query or list of queries (parallel)."""
+        if isinstance(query, str):
+            query_list = [query]
+            title_str = query
+        else:
+            query_list = query
+            title_str = " | ".join(query_list)
+
+        tasks = [self._search_single(q, topn, session) for q in query_list]
+        all_results = await asyncio.gather(*tasks)
+
+        title_url_summary_all = []
+        for _, title_url_summary in all_results:
+            if title_url_summary:
+                title_url_summary_all.extend(title_url_summary)
+
+        if not title_url_summary_all:
+            raise BackendError(f"No results returned for any query: {query_list}")
+
+        html_page = f"""
+<html><body>
+<h1>Search Results</h1>
+<ul>
+{"".join([f"<li><a href='{url}'>{title}</a> {summary}</li>" for title, url, summary in title_url_summary_all])}
+</ul>
+</body></html>
+"""
+
+        pseudo_url = f"web-search://ts={int(time.time())}"
+        return process_html(
+            html=html_page,
+            url=pseudo_url,
+            title=title_str,
+            display_urls=True,
+            session=session,
+        )
+
+    async def fetch(self, url: str, session=None):
+        """Fetch and extract a URL using SpecStream Extract API."""
+        is_view_source = url.startswith(VIEW_SOURCE_PREFIX)
+        if is_view_source:
+            url = url[len(VIEW_SOURCE_PREFIX):]
+
+        payload = {
+            "urls": [url],
+            "format": "html",
+        }
+
+        async with session.post(self.extract_url, json=payload, headers=self._headers()) as resp:
+            if resp.status != 200:
+                raise BackendError(
+                    f"Fetch error {resp.status}: {await resp.text()}"
+                )
+            data = await resp.json()
+
+        results = (data.get("data") or {}).get("results") or []
+        if not results:
+            raise BackendError(f"No content returned for {url}")
+
+        result = sanitize_dict_keys(results[0])
+        if not result:
+            raise BackendError(f"No content returned for {url}")
+
+        status = result.get("status")
+        if status and status != "ok":
+            raise BackendError(f"Fetch error for {url}: status={status}")
+
+        text_content = result.get("text") or ""
+        title = result.get("title") or ""
+
+        if not text_content:
+            raise BackendError(f"No content returned for {url}")
+
+        return process_html(
+            html=text_content,
+            url=url,
+            title=title,
+            display_urls=True,
+            session=session,
+        )

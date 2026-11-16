@@ -31,3 +31,4 @@ bash run_agent.sh results/xbench 8001 2 xbench serper <model>
 
 - **local**: Required for BrowseComp-Plus. Uses local BM25 or Dense search service.
 - **serper**: Uses Serper Google Search API. Requires `SERPER_API_KEY` in `.env`.
+- **specstream**: Uses SpecStream Search and Extract APIs. Requires `SPECSTREAM_API_KEY` in `.env`.
