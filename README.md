@@ -128,6 +128,9 @@ Edit `.env`:
 # Serper API (for web search when using browser_backend=serper)
 SERPER_API_KEY=your_key        # Get from: https://serper.dev/
 
+# SpecStream API (for web search and page extraction when using browser_backend=specstream)
+SPECSTREAM_API_KEY=your_key    # Get from: https://specstream.ai/
+
 # OpenAI API (for evaluation scoring)
 OPENAI_API_KEY=your_key        # Get from: https://platform.openai.com/api-keys
 ```
@@ -226,6 +229,7 @@ bash run_agent.sh results/gaia/OpenResearcher_serper 8001 2 gaia serper OpenRese
 **Browser Backend Options:**
 - `local` - Use local BM25/Dense search service (for BrowseComp-Plus)
 - `serper` - Use Serper Google Search API (for all other benchmarks)
+- `specstream` - Use SpecStream Search and Extract APIs (for all other benchmarks)
 
 For other parameters, refer to [parameter.md](assets/docs/parameter.md).
 

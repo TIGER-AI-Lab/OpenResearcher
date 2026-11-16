@@ -69,7 +69,7 @@ bash run_agent.sh [output_dir] [base_port] [num_servers] [dataset_name] [browser
 | `base_port` | `8002` | Base port number for vLLM servers |
 | `num_servers` | `3` | Number of vLLM servers to use |
 | `dataset_name` | `browsecomp` | Dataset key (see benchmarks.md) |
-| `browser_backend` | `local` | `local` or `serper` |
+| `browser_backend` | `local` | `local`, `serper`, or `specstream` |
 | `model_path` | `OpenResearcher/OpenResearcher-30B-A3B` | Model name or path |
 
 **Examples:**
@@ -79,6 +79,9 @@ bash run_agent.sh results/bc 8001 2 browsecomp_plus local OpenResearcher/OpenRes
 
 # GAIA with Serper API
 bash run_agent.sh results/gaia 8001 2 gaia serper OpenResearcher/OpenResearcher-30B-A3B
+
+# GAIA with SpecStream API
+bash run_agent.sh results/gaia 8001 2 gaia specstream OpenResearcher/OpenResearcher-30B-A3B
 ```
 
 ---

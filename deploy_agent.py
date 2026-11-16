@@ -14,7 +14,12 @@ from openai_harmony import (
     Message, Conversation, SystemContent, Role, ReasoningEffort,
     StreamableParser, load_harmony_encoding, HarmonyEncodingName
 )
-from browser import BrowserTool, LocalServiceBrowserBackend, SerperServiceBrowserBackend
+from browser import (
+    BrowserTool,
+    LocalServiceBrowserBackend,
+    SerperServiceBrowserBackend,
+    SpecStreamServiceBrowserBackend,
+)
 from data_utils import load_dataset, list_available_datasets, DEVELOPER_CONTENT, TOOL_CONTENT
 import dotenv
 import json5
@@ -57,6 +62,8 @@ class BrowserPool:
     def init_session(self, qid: Any) -> dict:
         if self.browser_backend == 'serper':
             backend = SerperServiceBrowserBackend()
+        elif self.browser_backend == 'specstream':
+            backend = SpecStreamServiceBrowserBackend()
         else:
             backend = LocalServiceBrowserBackend(base_url=self.search_url)
         tool = BrowserTool(backend=backend)
@@ -563,8 +570,8 @@ def main():
                         help=f"Dataset name (default: browsecomp-plus). Available: {', '.join(list_available_datasets())}")
     parser.add_argument("--data_path", type=str, default=None,
                         help="Path to local data files (only required for browsecomp-plus dataset)")
-    parser.add_argument("--browser_backend", type=str, default="local", choices=["local", "serper"],
-                        help="Browser backend: 'local' (default) or 'serper'")
+    parser.add_argument("--browser_backend", type=str, default="local", choices=["local", "serper", "specstream"],
+                        help="Browser backend: 'local' (default), 'serper', or 'specstream'")
     parser.add_argument("--max_concurrency_per_worker", type=int, default=8)
     parser.add_argument("--reasoning_effort", default='high')
     parser.add_argument("--tensor_parallel_size", type=int, default=1,
